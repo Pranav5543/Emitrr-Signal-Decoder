@@ -97,6 +97,20 @@ Here’s a breakdown of all 5 levels:
 npx create-react-app signal-decoder --template typescript
 cd signal-decoder
 
+## 2. Install dependencies
+
+npm install
+
+### 3. Start the development server
+
+npm start || npm run dev
+
+### Open in browser
+
+## Once the server starts, open your browser and go to:
+
+http://localhost:3000
+
 ## 📄 License
 
 MIT License — free to use, modify, and share.
