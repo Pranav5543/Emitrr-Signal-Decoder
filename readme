@@ -1,0 +1,105 @@
+# 🔔 Signal Decoder — The Invisible Pattern Game
+
+A modern memory + logic game built with **React + TypeScript**.  
+Test your ability to recognize hidden patterns and recall them after a timed flash.
+
+---
+
+## ✨ Features
+
+- 🟨 **5x5 interactive grid**
+- 🔄 **Flashing phase** (memorize highlighted cells in 10s)
+- 🎯 **Selection phase** (pick the correct cells by memory)
+- 📊 **Scoring system** (correct vs incorrect selections)
+- 💡 **Hints** (optional reveal of the hidden rule)
+- 📱 **Responsive, touch-friendly design**
+- 🌙 **Dark theme with gold accents**
+- 🎬 **Smooth animations & micro-interactions**
+
+---
+
+## 🕹️ How to Play
+
+1. A pattern of cells will **flash for 10 seconds**.
+2. Memorize the pattern carefully.
+3. When flashing stops, **select the cells** you remember.
+4. Press **Submit** to check your answer.
+5. Gain points for correct selections, lose for incorrect ones.
+6. Use **Prev/Next** to change levels or **Restart** to retry.
+
+---
+
+## 🎮 Levels & Logic
+
+Each level has a hidden **rule** that determines which cells will flash.  
+Here’s a breakdown of all 5 levels:
+
+---
+
+### **Level 1 — Even Indices**
+
+- **Rule:** `index % 2 === 0`
+- **Logic:** Each cell in the grid has a unique index from **0 to 24**.  
+  Cells with **even index numbers** (0, 2, 4, 6, …, 24) will flash.
+- **Example:** Top-left cell is index 0 → it flashes. Index 1 does not.
+
+---
+
+### **Level 2 — Diagonals**
+
+- **Rule:** `row === col || row + col === GRID_SIZE - 1`
+- **Logic:** Two diagonals are considered:
+  - **Main diagonal (↘)**: top-left → bottom-right
+  - **Anti diagonal (↙)**: top-right → bottom-left
+- If a cell lies on **either diagonal**, it will flash.
+
+---
+
+### **Level 3 — Prime Indices**
+
+- **Rule:** `isPrime(index)`
+- **Logic:** A prime number is only divisible by **1 and itself**.  
+  Flashing cells are those whose **index is a prime number**.
+- **Examples of primes in 0–24:** 2, 3, 5, 7, 11, 13, 17, 19, 23
+- Non-primes like 0, 1, 4, 6 do not flash.
+
+---
+
+### **Level 4 — Center Cluster**
+
+- **Rule:** Center cell + its 4 neighbors
+- **Logic:**
+  - Find the **center cell** → index 12 in a 5×5 grid (row 2, col 2).
+  - Include its **up, down, left, right** neighbors.
+- Final flashing set = **5 cells**: indices **7, 11, 12, 13, 17**.
+
+---
+
+### **Level 5 — (row + col) % 3 === 0**
+
+- **Rule:** `(row + col) % 3 === 0`
+- **Logic:**
+  - Take the row number and column number of each cell.
+  - Add them together.
+  - If the sum is divisible by 3, that cell flashes.
+- Example in a 5×5 grid:
+  - Cell (0,0) → sum = 0 → divisible by 3 ✅
+  - Cell (1,2) → sum = 3 → divisible by 3 ✅
+  - Cell (2,4) → sum = 6 → divisible by 3 ✅
+
+---
+
+## 🚀 Getting Started
+
+### 1. Create React + TypeScript project
+
+```bash
+npx create-react-app signal-decoder --template typescript
+cd signal-decoder
+
+## 📄 License
+
+MIT License — free to use, modify, and share.
+
+👨‍💻 Project created by **N. Pranav**
+```
