@@ -170,7 +170,7 @@ export default function App(): JSX.Element {
     <div
       style={{
         minHeight: "100vh",
-        background: `linear-gradient(180deg, ${BG} 0%, #0b0b0b 100%)`,
+        background: `linear-gradient(180deg, ${BG} 0%, #000000ff 100%)`,
         fontFamily:
           "Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial",
         color: "#fff",
@@ -182,30 +182,30 @@ export default function App(): JSX.Element {
     >
       <style>{`
         .container { width:100%; max-width:980px; margin-top:36px; }
-        .card { background:${CARD}; border-radius:28px; padding:18px; box-shadow: 0 12px 40px rgba(0,0,0,0.6); backdrop-filter: blur(8px); border: 1px solid rgba(255,209,102,0.06); transition: transform .36s cubic-bezier(.2,.9,.2,1); }
+        .card { background:${CARD}; border-radius:28px; padding:18px; box-shadow: 0 12px 40px rgba(255, 187, 0, 0.73); backdrop-filter: blur(8px); border: 1px solid rgba(255, 180, 5, 0.85); transition: transform .36s cubic-bezier(.2,.9,.2,1); }
         .card:hover{ transform: translateY(-6px); }
         .header{ display:flex; justify-content:space-between; align-items:center; gap:12px; }
         .title{ font-size:18px; font-weight:700; letter-spacing:0.2px; }
-        .sub{ color: rgba(255,255,255,0.7); font-size:13px }
+        .sub{ color: rgba(242, 242, 242, 0.7); font-size:13px }
         .meta{ display:flex; gap:12px; align-items:center }
 
         .grid { display:grid; grid-template-columns: repeat(${GRID_SIZE}, 72px); gap:12px; justify-content:center; padding:6px; }
-        .cell { width:72px; height:72px; border-radius:16px; display:flex; align-items:center; justify-content:center; user-select:none; touch-action: manipulation; cursor:pointer; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.03); transition: transform .18s cubic-bezier(.2,.9,.2,1), box-shadow .18s ease, background .2s ease; }
+        .cell { width:72px; height:72px; border-radius:16px; display:flex; align-items:center; justify-content:center; user-select:none; touch-action: manipulation; cursor:pointer; background: rgba(247, 168, 21, 0); border: 1px solid rgba(255, 255, 255, 0.02); transition: transform .18s cubic-bezier(.2,.9,.2,1), box-shadow .18s ease, background .2s ease; }
         .cell:active{ transform: scale(.98); }
 
         .lit { box-shadow: 0 14px 30px rgba(255,177,20,0.18); animation: pulse 900ms infinite; background: linear-gradient(180deg, rgba(255,209,102,0.12), rgba(255,177,20,0.06)); border: 1px solid rgba(255,209,102,0.18); }
         @keyframes pulse { 0%{ transform: scale(1); } 50%{ transform: scale(1.06);} 100%{ transform: scale(1);} }
 
-        .selected { box-shadow: 0 10px 26px rgba(255,177,20,0.12); outline: 3px solid rgba(255,177,20,0.12); }
+        .selected { box-shadow: 0 10px 26px rgba(255,177,20,0.12); outline: 3px solid rgba(255, 177, 20, 0.77); }
         .correct { background: linear-gradient(180deg, rgba(16,185,129,0.06), rgba(16,185,129,0.04)); border:1px solid rgba(16,185,129,0.16); box-shadow: 0 8px 20px rgba(16,185,129,0.06); }
         .incorrect { background: linear-gradient(180deg, rgba(239,68,68,0.06), rgba(239,68,68,0.04)); border:1px solid rgba(239,68,68,0.14); box-shadow: 0 8px 20px rgba(239,68,68,0.06); }
 
         .controls { display:flex; gap:10px; flex-wrap:wrap; }
         .btn { border-radius:14px; padding:10px 14px; font-weight:700; border:none; cursor:pointer; transition: transform .18s cubic-bezier(.2,.9,.2,1), box-shadow .18s ease; }
         .btn:active{ transform: translateY(2px) scale(.996); }
-        .btn-ghost{ background: transparent; color: rgba(255,255,255,0.9); border:1px solid rgba(255,255,255,0.04); padding:8px 12px; }
-        .btn-primary{ background: linear-gradient(90deg, ${GOLD}, ${GOLD_ALT}); color: #050505; box-shadow: 0 8px 26px rgba(255,177,20,0.12); }
-        .btn-muted{ background: rgba(255,255,255,0.03); color: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.03); }
+        .btn-ghost{ background: transparent; color: rgba(255,255,255,0.9); border:1px solid rgba(17, 16, 16, 1); padding:8px 12px; }
+        .btn-primary{ background: linear-gradient(90deg, ${GOLD}, ${GOLD_ALT}); color: #000000ff; box-shadow: 0 8px 26px rgba(255, 170, 0, 1); }
+        .btn-muted{ background: rgba(255,255,255,0.03); color: rgba(255, 255, 255, 0.9); border: 1px solid rgba(255, 62, 62, 0); }
 
         .panel-right{ min-width:260px; max-width:360px; }
         .levels { display:flex; gap:8px; flex-wrap:wrap; }
